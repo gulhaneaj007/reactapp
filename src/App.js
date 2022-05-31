@@ -29,12 +29,11 @@ function App() {
   ];
   return (
     <>
-      <div className="App ">
+      <div className="App container">
         <h1>Handle array with list</h1>
         <Table striped variant="dark" >
           <thead>
             <tr>
-              
               <th>Sr No</th>
               <th>Address</th>
               <th> Name</th>
@@ -46,26 +45,22 @@ function App() {
             {result.map((item, i) => (
               <tr key={i}>
                 <td>{i+1}</td>
-                <td>
-                  <Table striped variant="dark" >
-                    <tbody>
+                <td style={{textAlign:"left"}}>
+                  {/* <Table striped variant="dark" > */}
+                    {/* <tbody> */}
                       {
                         item.Address.map((arr_data,j)=>
                         <tr key ={j}>
-                          <td>{arr_data.HN}</td>
-                          <td>{arr_data.city}</td>
-                          <td>{arr_data.country}</td>
+                          <td>House No :- {arr_data.HN}, City :-{arr_data.city}, Country  :-{arr_data.country}</td>
                         </tr>
                         )
                       }
-                    </tbody>
-                  </Table>
+                    {/* </tbody> */}
+                  {/* </Table> */}
                 </td>
-                
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{item.no}</td>
-                
               </tr>
             ))}
           </tbody>
